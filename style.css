@@ -1,0 +1,738 @@
+
+/* =========================
+   1. BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #080b18;
+    --second-bg: #10152b;
+    --card-bg: #151b35;
+    --main-color: #9b7bff;
+    --blue-color: #55b8ff;
+    --text-color: #ffffff;
+    --light-color: #b9bfd3;
+    --border-color: rgba(255,255,255,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+section {
+    padding: 100px 9%;
+    scroll-margin-top: 75px;
+}
+
+
+/* =========================
+   2. NAVBAR
+========================= */
+
+.header {
+    width: 100%;
+    padding: 18px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8, 11, 24, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: var(--light-color);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--main-color);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   3. HOME SECTION
+========================= */
+
+.home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        radial-gradient(circle at 80% 40%,
+        rgba(125, 85, 255, 0.15), transparent 35%);
+}
+
+.home-content {
+    max-width: 650px;
+}
+
+.intro {
+    color: var(--main-color);
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.home h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.home h2 {
+    font-size: clamp(20px, 3vw, 29px);
+    margin-bottom: 20px;
+}
+
+.typing-text {
+    color: var(--main-color);
+    border-right: 2px solid var(--main-color);
+    padding-right: 5px;
+}
+
+.home-description {
+    color: var(--light-color);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 2px solid var(--main-color);
+    background: var(--main-color);
+    color: #090b18;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(155,123,255,0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--light-color);
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--main-color);
+}
+
+.home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--main-color), var(--blue-color));
+    box-shadow: 0 0 60px rgba(155,123,255,0.3);
+    border: 8px solid rgba(255,255,255,0.08);
+}
+
+.profile-circle span {
+    font-size: 90px;
+    font-weight: 800;
+    color: #080b18;
+}
+
+
+/* =========================
+   4. SECTION HEADINGS
+========================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading p {
+    color: var(--main-color);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+.section-heading h2 span {
+    color: var(--main-color);
+}
+
+
+/* =========================
+   5. ABOUT SECTION
+========================= */
+
+.about {
+    background: var(--second-bg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+}
+
+.about-card,
+.detail-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.about-card h3 {
+    font-size: 24px;
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+
+.about-card p,
+.detail-card p {
+    color: var(--light-color);
+}
+
+.about-details {
+    display: grid;
+    gap: 15px;
+}
+
+.detail-card h3 {
+    color: var(--blue-color);
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   6. SKILLS SECTION
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 28px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--main-color);
+    box-shadow: 0 10px 30px rgba(155,123,255,0.12);
+}
+
+.skill-card span {
+    font-size: 35px;
+}
+
+.skill-card h3 {
+    margin: 12px 0 5px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: var(--light-color);
+}
+
+
+/* =========================
+   7. PROJECTS SECTION
+========================= */
+
+.projects {
+    background: var(--second-bg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 27px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--main-color);
+    box-shadow: 0 10px 30px rgba(155,123,255,0.12);
+}
+
+.project-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--light-color);
+    font-size: 14px;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: var(--main-color);
+    background: rgba(155,123,255,0.12);
+}
+
+.project-link {
+    color: var(--blue-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.project-link:hover {
+    color: var(--main-color);
+}
+
+
+/* =========================
+   8. EDUCATION SECTION
+========================= */
+
+.education-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+}
+
+.education-icon {
+    font-size: 50px;
+}
+
+.education-date {
+    color: var(--main-color);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.education-card h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.education-card h4 {
+    color: var(--blue-color);
+    margin-bottom: 5px;
+}
+
+.education-card p:last-child {
+    color: var(--light-color);
+}
+
+
+/* =========================
+   9. CONTACT SECTION
+========================= */
+
+.contact {
+    background: var(--second-bg);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contact-info,
+.contact-form {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--light-color);
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    gap: 4px;
+}
+
+.contact-item strong {
+    color: var(--main-color);
+}
+
+.contact-item a {
+    color: var(--light-color);
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: var(--blue-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    background: var(--bg-color);
+    color: white;
+    outline: none;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--main-color);
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+}
+
+.form-status {
+    color: var(--blue-color);
+    font-size: 13px;
+}
+
+
+/* =========================
+   10. FOOTER
+========================= */
+
+.footer {
+    padding: 25px 9%;
+    text-align: center;
+    color: var(--light-color);
+    background: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
+}
+
+
+/* =========================
+   11. BACK TO TOP
+========================= */
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--main-color);
+    color: #080b18;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   12. SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   13. TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    section {
+        padding: 85px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================
+   14. MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        background: var(--second-bg);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    .home-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .profile-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-circle span {
+        font-size: 65px;
+    }
+
+    .about-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================
+   15. SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home h1 {
+        font-size: 38px;
+    }
+
+    .home h2 {
+        font-size: 21px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+    }
+
+    .home-buttons .btn {
+        width: 100%;
+    }
+
+    .about-card,
+    .detail-card,
+    .project-card,
+    .contact-info,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .education-card {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 22px 6%;
+    }
+}
+
+/* Accessibility: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
